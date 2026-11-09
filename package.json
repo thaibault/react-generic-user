@@ -1,0 +1,328 @@
+{
+  "name": "react-generic-user",
+  "version": "0.0.1",
+  "description": "Generic user session handling (redux or react context based) and login components.",
+  "keywords": [
+    "authentication",
+    "login",
+    "react",
+    "redux",
+    "session",
+    "user"
+  ],
+  "homepage": "https://tsickert.com/react-generic-user",
+  "bugs": {
+    "email": "info@tsickert.com",
+    "url": "https://github.com/thaibault/react-generic-user/issues"
+  },
+  "license": "CC-BY-3.0",
+  "author": {
+    "email": "info@tsickert.com",
+    "name": "Torben Sickert",
+    "url": "https://tsickert.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thaibault/react-generic-user.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./components": "./dist/components.js",
+    "./components.css": {
+      "style": "./dist/components.css"
+    },
+    "./components.js": "./dist/components.js",
+    "./context": "./dist/context.js",
+    "./context.js": "./dist/context.js",
+    "./harness": "./dist/harness.js",
+    "./harness.js": "./dist/harness.js",
+    "./index.css": {
+      "style": "./dist/index.css"
+    },
+    "./redux": "./dist/redux.js",
+    "./redux.js": "./dist/redux.js",
+    "./type": "./dist/type.js",
+    "./type.js": "./dist/type.js"
+  },
+  "main": "dist/index.js",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "yarn build:types && yarn build:plain",
+    "build:plain": "weboptimizer build",
+    "build:types": "weboptimizer build:types",
+    "check": "yarn check:types && yarn lint",
+    "check:types": "weboptimizer check:types",
+    "clear": "weboptimizer clear",
+    "document": "weboptimizer document",
+    "lint": "weboptimizer lint",
+    "prepare": "yarn build",
+    "serve": "weboptimizer serve",
+    "start": "yarn serve",
+    "test": "weboptimizer test",
+    "test:browser": "weboptimizer test:browser",
+    "test:coverage": "weboptimizer test:coverage",
+    "test:coverage:report": "weboptimizer test:coverage:report",
+    "update:documentation": "web-documentation",
+    "watch": "weboptimizer build --watch"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^8.0.7",
+    "@babel/preset-react": "^8.0.1",
+    "@codemirror/autocomplete": "^6.20.4",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/lint": "^6.9.7",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "@emotion/react": "^11.14.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
+    "@reduxjs/toolkit": "^2.14.0",
+    "@rmwc/button": "^14.3.5",
+    "@rmwc/card": "^14.3.5",
+    "@rmwc/checkbox": "^14.3.5",
+    "@rmwc/circular-progress": "^14.3.5",
+    "@rmwc/formfield": "^14.3.5",
+    "@rmwc/icon": "^14.3.5",
+    "@rmwc/icon-button": "^14.3.5",
+    "@rmwc/menu": "^14.3.5",
+    "@rmwc/select": "^14.3.5",
+    "@rmwc/tabs": "^14.3.5",
+    "@rmwc/textfield": "^14.3.5",
+    "@rmwc/theme": "^14.3.5",
+    "@rmwc/tooltip": "^14.3.5",
+    "@rmwc/touch-target": "^14.3.5",
+    "@rmwc/typography": "^14.3.5",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@teamsupercell/typings-for-css-modules-loader": "^2.5.2",
+    "@tiptap/core": "^3.32.2",
+    "@tiptap/extensions": "^3.32.2",
+    "@tiptap/react": "^3.32.2",
+    "@tiptap/starter-kit": "^3.32.2",
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^26.6.6",
+    "@types/prop-types": "^15.7.15",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/react-transition-group": "^4.4.12",
+    "@types/spark-md5": "^3.0.5",
+    "@types/webpack-env": "^1.18.8",
+    "@typescript-eslint/eslint-plugin": "^8.72.1",
+    "@typescript-eslint/parser": "^8.72.1",
+    "blob-util": "^2.0.2",
+    "clientnode": "^4.0.1530",
+    "css-loader": "^7.1.5",
+    "cssnano": "^9.9.0",
+    "eslint": "^10.14.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-jsdoc": "^65.4.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.5.2",
+    "jsdoc": "^4.0.5",
+    "material-components-web": "^14.0.0",
+    "material-icons": "^1.13.14",
+    "mini-css-extract-plugin": "^2.10.2",
+    "playwright-core": "^1.64.1",
+    "postcss": "8.5.32",
+    "postcss-import": "^17.0.1",
+    "postcss-loader": "^8.2.1",
+    "postcss-nested": "^9.0.1",
+    "postcss-preset-env": "^11.6.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-generic-animate": "^0.0.141",
+    "react-generic-dummy": "^0.0.141",
+    "react-generic-tools": "^0.0.138",
+    "react-input-material": "^0.0.854",
+    "react-redux": "^9.3.1",
+    "react-transition-group": "^4.4.5",
+    "react-useanimations": "^3.1.1",
+    "redux": "^5.0.1",
+    "spark-md5": "^3.0.2",
+    "style-loader": "^4.0.0",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
+    "tslib": "^2.9.1",
+    "typescript-eslint": "^8.72.1",
+    "typescript-plugin-css-modules": "^5.3.0",
+    "web-documentation": "^1.0.71",
+    "weboptimizer": "^4.0.109",
+    "webpack-dev-server": "^6.1.0"
+  },
+  "peerDependencies": {
+    "@babel/preset-react": "*",
+    "@reduxjs/toolkit": "*",
+    "@rmwc/button": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "clientnode": "*",
+    "playwright-core": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-generic-tools": "*",
+    "react-input-material": "*",
+    "react-redux": "*",
+    "tslib": "*"
+  },
+  "peerDependenciesMeta": {
+    "@babel/preset-react": {
+      "optional": true
+    },
+    "@reduxjs/toolkit": {
+      "optional": true
+    },
+    "@rmwc/button": {
+      "optional": true
+    },
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    },
+    "playwright-core": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-input-material": {
+      "optional": true
+    },
+    "react-redux": {
+      "optional": true
+    }
+  },
+  "resolutions": {
+    "globals@npm:^11.1.0": "patch:globals@npm%3A11.12.0#~/.yarn/patches/globals-npm-11.12.0-1fa7f41a6c.patch",
+    "globals@npm:^14.0.0": "patch:globals@npm%3A11.12.0#~/.yarn/patches/globals-npm-11.12.0-1fa7f41a6c.patch",
+    "globals@npm:^9.18.0": "patch:globals@npm%3A11.12.0#~/.yarn/patches/globals-npm-11.12.0-1fa7f41a6c.patch"
+  },
+  "engines": {
+    "node": ">=26",
+    "npm": ">=12",
+    "yarn": ">=4"
+  },
+  "webDocumentation": {
+    "languages": [
+      "deDE",
+      "enUS"
+    ],
+    "tagline": "Generic user sessions and login components.<!--deDE:Generische Benutzersitzungen und Login-Komponenten.-->"
+  },
+  "webOptimizer": {
+    "commandLine": {
+      "test": {
+        "environments": [
+          "jsdom"
+        ]
+      }
+    },
+    "generic": {
+      "entry": {
+        "components": "./components",
+        "context": "./context",
+        "harness": "./harness",
+        "index": "./index.ts",
+        "redux": "./redux",
+        "type": "./type"
+      },
+      "supportedBrowsers": [
+        "IE >= 11",
+        "last 2 versions",
+        "> 5%"
+      ]
+    },
+    "module": {
+      "optimizer": {
+        "terser": {
+          "terserOptions": {
+            "compress": {
+              "#": "To provide a logging output we need to exclude this feature.",
+              "drop_console": {
+                "__evaluate__": "false"
+              },
+              "drop_debugger": {
+                "__evaluate__": "false"
+              }
+            }
+          }
+        }
+      },
+      "preprocessor": {
+        "javaScript": {
+          "options": {
+            "overrides": {
+              "__evaluate__": "[{test: /\\.(jsx|tsx)$/u, presets: [['@babel/preset-react', {development: self.debug}]]}]"
+            },
+            "presets": {
+              "#": "NOTE: We disable module export/import transformation to allow tree shaking by the final (minimizer).",
+              "__evaluate__": "[['@babel/preset-env', {targets: self.generic.isWeb ? {browsers: self.generic.supportedBrowsers, node: packageConfiguration.engines.node.replace(/>?=?([0-9]+)/, '$1')} : {node: packageConfiguration.engines.node.replace(/>?=?([0-9]+)/, '$1')}}], '@babel/preset-typescript']"
+            }
+          }
+        },
+        "cascadingStyleSheet": {
+          "additional": {
+            "plugins": {
+              "pre": {
+                "__append__": "module.optionalImport('postcss-nested').then((module) => module?.default)"
+              }
+            }
+          }
+        }
+      },
+      "cascadingStyleSheet": {
+        "exclude": false,
+        "options": {
+          "import": {
+            "filter": {
+              "__evaluate__": "(url) => !url.includes('.css')"
+            }
+          }
+        }
+      }
+    },
+    "path": {
+      "source": {
+        "base": "src/"
+      },
+      "target": {
+        "base": "dist/"
+      }
+    },
+    "injection": {
+      "entry": {
+        "__evaluate__": "2 < self.givenCommandLineArguments.length && self.givenCommandLineArguments[2].startsWith('test') ? {testBundle: './test'} : self.generic.entry"
+      },
+      "external": {
+        "implicit": {
+          "pattern": {
+            "include": {
+              "__append__": {
+                "__evaluate__": "/(?:^|\\/)playwright(?:-core)?(?:$|\\/)/"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "packageManager": "yarn@4.18.1+sha512.b2e1e7524f654f2749d32b4ebcb4622473cb5bcbc485df2007e12a154e50162a4d795526768bc5f5b8f81717bfd79deb2472813d86fb5ae2eb551fa9c872b08f"
+}
