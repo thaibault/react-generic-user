@@ -27,7 +27,7 @@ endregion */
         font-size: var(--mdc-typography-headline2-font-size, 3.75rem);
         font-weight: var(--mdc-typography-headline2-font-weight, 300);
         letter-spacing: var(
-            --mdc-typography-headline2-letter-spacing, -0.0083333333em
+            --mdc-typography-headline2-letter-spacing, -0.0083em
         );
         line-height: var(--mdc-typography-headline2-line-height, 3.75rem);
         text-align: center;

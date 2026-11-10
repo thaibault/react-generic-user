@@ -32,7 +32,7 @@ import type {
 
 import {isFunction} from 'clientnode'
 import {memo as memoize, useEffect, useState} from 'react'
-import {TextInput} from 'react-input-material'
+import TextInput from 'react-input-material/components/TextInput'
 import {useMemorizedValue} from 'react-generic-tools'
 
 import {Button} from '@rmwc/button'
