@@ -20,7 +20,7 @@ import type {
     BaseLoginData, BaseUserContext, ContextUserSession, SessionCallbacks
 } from '../type'
 
-import {createElement} from 'react'
+import {createElement, StrictMode} from 'react'
 import prepareTestEnvironment from 'react-generic-tools/testHelper'
 
 import {
@@ -57,12 +57,17 @@ describe('context session', () => {
 
     let callbacks: SessionCallbacks<BaseUserContext>
 
-    const render = async <Type>(hook: () => Type) => {
+    const render = async <Type>(hook: () => Type, strict = false) => {
         const {result} = runHook(hook, {wrapper: {component: (({
             children
-        }: {children: ReactNode}) =>
-            createElement(UserProvider, {children, options: callbacks})
-        ) as FunctionComponent}})
+        }: {children: ReactNode}) => {
+            const provider =
+                createElement(UserProvider, {children, options: callbacks})
+
+            return strict ?
+                createElement(StrictMode, null, provider) :
+                provider
+        }) as FunctionComponent}})
 
         await settle()
 
@@ -323,6 +328,51 @@ describe('context session', () => {
 
         expect(handler.logout).toHaveBeenCalledTimes(1)
         expect(result.value.session.authenticated).toStrictEqual(false)
+    })
+    test('calls handlers once per request in strict mode', async () => {
+        const result = await render(useSession, true)
+
+        await trigger(() => {
+            result.value.authenticate()
+        })
+        expect(handler.authenticate).toHaveBeenCalledTimes(1)
+        expect(callbacks.onAuthenticate).toHaveBeenCalledTimes(1)
+
+        await trigger(() => {
+            result.value.logout()
+        })
+        expect(handler.logout).toHaveBeenCalledTimes(1)
+        expect(callbacks.onDeauthenticate).toHaveBeenCalledTimes(1)
+
+        await trigger(() => {
+            result.value.login({login: 'a', password: 'b'})
+        })
+        expect(handler.login).toHaveBeenCalledTimes(1)
+        expect(callbacks.onAuthenticate).toHaveBeenCalledTimes(2)
+        expect(result.value.session.authenticated).toStrictEqual(true)
+    })
+    test('uses current callbacks', async () => {
+        const {render: rerender, result} = runHook(
+            useSession,
+            {wrapper: {component: (({children}: {children: ReactNode}) =>
+                createElement(UserProvider, {children, options: callbacks})
+            ) as FunctionComponent}}
+        )
+        await settle()
+
+        const initialOnAuthenticate = callbacks.onAuthenticate
+        const onAuthenticate = jest.fn()
+        callbacks = {...callbacks, onAuthenticate}
+        await trigger(() => {
+            rerender()
+        })
+
+        await trigger(() => {
+            result.value.authenticate()
+        })
+
+        expect(initialOnAuthenticate).not.toHaveBeenCalled()
+        expect(onAuthenticate).toHaveBeenCalledTimes(1)
     })
     test('authenticates after running logouts', async () => {
         const deferred = createDeferred<boolean>()

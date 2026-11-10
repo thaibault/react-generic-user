@@ -20,7 +20,9 @@ import type {
     User
 } from './type'
 
-import {createContext, useContext, useState} from 'react'
+import {
+    createContext, useContext, useMemo, useRef, useState
+} from 'react'
 // endregion
 export const sessionFactory = <
     LoginDataType extends BaseLoginData = BaseLoginData,
@@ -65,236 +67,135 @@ export const sessionFactory = <
     const useUserState = (
         options: Partial<SessionCallbacks<UserContext>> = {}
     ): UserType => {
-        const [user, setUser] = useState<UserType>({
-            session: {
-                authenticated: null,
-                authenticating: null,
-                deauthenticating: null
-            },
+        type Session = ContextUserSession<UserContext>
 
-            authenticate: (): void => {
-                setUser((oldUser: UserType): UserType => {
-                    /*
-                      If already an authentication request is running do
-                      nothing.
-                    */
-                    if (oldUser.session.authenticating)
-                        return oldUser
+        /*
+            NOTE: Requests are started outside of react's state updater
+            functions since they have to be pure (strict mode calls them
+            twice). So we track the latest session synchronously.
+        */
+        const sessionReference = useRef<Session>({
+            authenticated: null,
+            authenticating: null,
+            deauthenticating: null
+        })
+        const [session, setSession] =
+            useState<Session>(sessionReference.current)
 
-                    const authenticater = (): Promise<UserContext> =>
-                        new Promise<UserContext>((
-                            resolve: (value: UserContext) => void,
-                            reject: (reason: Error) => void
-                        ): void => {
-                            authenticate(oldUser.session)
-                                .then((userContext: UserContext): void => {
-                                    setUser((
-                                        oldUser: UserType
-                                    ): UserType => {
-                                        if (options.onAuthenticate)
-                                            options.onAuthenticate(userContext)
+        const optionsReference = useRef(options)
+        optionsReference.current = options
 
-                                        resolve(userContext)
+        const [actions] = useState(() => {
+            const updateSession = (update: (session: Session) => Session) => {
+                sessionReference.current = update(sessionReference.current)
+                setSession(sessionReference.current)
+            }
+            /**
+             * Runs given authentication request after a running logout and
+             * records its result.
+             * @param request - Authentication request to run.
+             */
+            const startAuthentication = (
+                request: () => Promise<UserContext>
+            ) => {
+                // If already an authentication request is running do nothing.
+                if (sessionReference.current.authenticating)
+                    return
 
-                                        return {
-                                            ...oldUser,
-                                            session: {
-                                                ...oldUser.session,
-                                                authenticated: true,
-                                                authenticating: null,
-                                                userContext
-                                            }
-                                        }
-                                    })
-                                })
-                                .catch((error: unknown) => {
-                                    setUser(
-                                        (oldUser: UserType): UserType => {
-                                            /*
-                                                eslint-disable
-                                                prefer-promise-reject-errors
-                                            */
-                                            reject(error as Error)
-                                            /*
-                                                eslint-enable
-                                                prefer-promise-reject-errors
-                                            */
+                const authenticater = (): Promise<UserContext> =>
+                    request().then(
+                        (userContext: UserContext): UserContext => {
+                            if (optionsReference.current.onAuthenticate)
+                                optionsReference.current.onAuthenticate(
+                                    userContext
+                                )
 
-                                            return {
-                                                ...oldUser,
-                                                session: {
-                                                    ...oldUser.session,
-                                                    authenticating: null
-                                                }
-                                            }
-                                        }
-                                    )
-                                })
-                        })
+                            updateSession((session) => ({
+                                ...session,
+                                authenticated: true,
+                                authenticating: null,
+                                userContext
+                            }))
 
-                    return {
-                        ...oldUser,
-                        session: {
-                            ...oldUser.session,
-                            authenticating:
-                                oldUser.session.deauthenticating ?
-                                    oldUser.session.deauthenticating.then(
-                                        authenticater, authenticater
-                                    ) :
-                                    authenticater()
+                            return userContext
+                        },
+                        (error: unknown) => {
+                            updateSession((session) => ({
+                                ...session, authenticating: null
+                            }))
+
+                            throw error
                         }
-                    }
-                })
-            },
-            login: (loginData: LoginDataType): undefined => {
-                setUser((oldUser: UserType): UserType => {
-                    if (oldUser.session.authenticating)
-                        return oldUser
+                    )
 
-                    const authenticater = (): Promise<UserContext> =>
-                        new Promise<UserContext>(
-                            (
-                                resolve: (value: UserContext) => void,
-                                reject: (error: Error) => void
-                            ): void => {
-                                login(loginData)
-                                    .then((userContext: UserContext): void => {
-                                        setUser(
-                                            (oldUser: UserType): UserType => {
-                                                if (options.onAuthenticate)
-                                                    options.onAuthenticate(
-                                                        userContext
-                                                    )
+                const {deauthenticating} = sessionReference.current
+                const authenticating = deauthenticating ?
+                    deauthenticating.then(authenticater, authenticater) :
+                    authenticater()
 
-                                                resolve(userContext)
+                updateSession((session) => ({...session, authenticating}))
+            }
 
-                                                return {
-                                                    ...oldUser,
-                                                    session: {
-                                                        ...oldUser.session,
-                                                        authenticated: true,
-                                                        authenticating: null,
-                                                        userContext
-                                                    }
-                                                }
-                                            }
-                                        )
-                                    })
-                                    .catch((error: unknown) => {
-                                        setUser(
-                                            (oldUser: UserType): UserType => {
-                                            /*
-                                                eslint-disable
-                                                prefer-promise-reject-errors
-                                            */
-                                                reject(error as Error)
-                                            /*
-                                                eslint-enable
-                                                prefer-promise-reject-errors
-                                            */
-                                                return {
-                                                    ...oldUser,
-                                                    session: {
-                                                        ...oldUser.session,
-                                                        authenticating: null
-                                                    }
-                                                }
-                                            }
-                                        )
-                                    })
+            return {
+                authenticate: (): void => {
+                    startAuthentication(() =>
+                        authenticate(sessionReference.current)
+                    )
+                },
+                login: (loginData: LoginDataType): undefined => {
+                    startAuthentication(() => login(loginData))
+                },
+                logout: (): void => {
+                    // If already a logout request is running do nothing.
+                    if (sessionReference.current.deauthenticating)
+                        return
+
+                    const deauthenticater = (): Promise<boolean> =>
+                        logout(sessionReference.current).then(
+                            (deauthenticated: boolean): boolean => {
+                                if (
+                                    deauthenticated &&
+                                    optionsReference.current.onDeauthenticate
+                                )
+                                    optionsReference.current.onDeauthenticate(
+                                        sessionReference.current.userContext
+                                    )
+
+                                updateSession((session) => ({
+                                    ...session,
+                                    authenticated: !deauthenticated,
+                                    deauthenticating: null,
+                                    userContext: deauthenticated ?
+                                        undefined :
+                                        session.userContext
+                                }))
+
+                                return deauthenticated
+                            },
+                            (error: unknown) => {
+                                updateSession((session) => ({
+                                    ...session, deauthenticating: null
+                                }))
+
+                                throw error
                             }
                         )
 
-                    return {
-                        ...oldUser,
-                        session: {
-                            ...oldUser.session,
-                            authenticating:
-                                oldUser.session.deauthenticating ?
-                                    oldUser.session.deauthenticating.then(
-                                        authenticater, authenticater
-                                    ) :
-                                    authenticater()
-                        }
-                    }
-                })
-            },
-            logout: (): void => {
-                setUser((oldUser: UserType): UserType => {
-                    if (oldUser.session.deauthenticating)
-                        return oldUser
+                    const {authenticating} = sessionReference.current
+                    const deauthenticating = authenticating ?
+                        authenticating.then(deauthenticater, deauthenticater) :
+                        deauthenticater()
 
-                    const deauthenticater = (): Promise<boolean> =>
-                        new Promise<boolean>((
-                            resolve: (value: boolean) => void,
-                            reject: (reason: Error) => void
-                        ): void => {
-                            logout(oldUser.session)
-                                .then((deauthenticated: boolean): void => {
-                                    setUser((oldUser: UserType): UserType => {
-                                        if (
-                                            deauthenticated &&
-                                            options.onDeauthenticate
-                                        )
-                                            options.onDeauthenticate(
-                                                oldUser.session.userContext
-                                            )
-
-                                        resolve(deauthenticated)
-
-                                        return {
-                                            ...oldUser,
-                                            session: {
-                                                ...oldUser.session,
-                                                authenticated: !deauthenticated,
-                                                deauthenticating: null,
-                                                userContext: deauthenticated ?
-                                                    undefined :
-                                                    oldUser.session.userContext
-                                            }
-                                        }
-                                    })
-                                })
-                                .catch((error: unknown) => {
-                                    setUser(
-                                        (oldUser: UserType): UserType => {
-                                            /*
-                                                eslint-disable
-                                                prefer-promise-reject-errors
-                                            */
-                                            reject(error as Error)
-                                            /*
-                                                eslint-enable
-                                                prefer-promise-reject-errors
-                                            */
-
-                                            return {
-                                                ...oldUser,
-                                                session: {
-                                                    ...oldUser.session,
-                                                    deauthenticating: null
-                                                }
-                                            }
-                                        }
-                                    )
-                                })
-                        })
-
-                    return {
-                        ...oldUser,
-                        session: {
-                            ...oldUser.session,
-                            deauthenticating: oldUser.session.authenticating ?
-                                oldUser.session.authenticating
-                                    .then(deauthenticater, deauthenticater) :
-                                deauthenticater()
-                        }
-                    }
-                })
+                    updateSession((session) => ({
+                        ...session, deauthenticating
+                    }))
+                }
             }
         })
 
-        return user
+        return useMemo<UserType>(
+            () => ({...actions, session}), [actions, session]
+        )
     }
 
     return {
