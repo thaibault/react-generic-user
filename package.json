@@ -1,6 +1,6 @@
 {
   "name": "react-generic-user",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
   "description": "Generic user session handling (redux or react context based) and login components.",
   "keywords": [
     "authentication",
