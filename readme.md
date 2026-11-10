@@ -22,6 +22,9 @@ Project status
 
 [![check types](https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/check-types.yaml?label=check%20types&style=for-the-badge)](https://github.com/thaibault/react-generic-user/actions/workflows/check-types.yaml)
 [![lint](https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/lint.yaml?label=lint&style=for-the-badge)](https://github.com/thaibault/react-generic-user/actions/workflows/lint.yaml)
+[![test](https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/test-coverage-report.yaml?label=test&style=for-the-badge)](https://github.com/thaibault/react-generic-user/actions/workflows/test-coverage-report.yaml)
+
+[![code coverage](https://img.shields.io/coverallsCoverage/github/thaibault/react-generic-user?label=code%20coverage&style=for-the-badge)](https://coveralls.io/github/thaibault/react-generic-user)
 
 [![deploy web documentation](https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/deploy-web-documentation.yaml?label=deploy%20web%20documentation&style=for-the-badge)](https://github.com/thaibault/react-generic-user/actions/workflows/deploy-web-documentation.yaml)
 [![web documentation](https://img.shields.io/website-up-down-green-red/https/tsickert.com/react-generic-user.svg?label=web-documentation&style=for-the-badge)](https://tsickert.com/react-generic-user)
