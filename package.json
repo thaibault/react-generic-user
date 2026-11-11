@@ -199,8 +199,9 @@
   },
   "webDocumentation": {
     "languages": [
+      "enUS",
       "deDE",
-      "enUS"
+      "frFR"
     ],
     "tagline": "Generic user sessions and login components.<!--deDE:Generische Benutzersitzungen und Login-Komponenten.-->"
   },
