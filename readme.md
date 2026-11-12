@@ -176,14 +176,17 @@ Session with a React context
 ----------------------------
 
 Without Redux the session lives in a context. "authenticate" and "login"
-resolve with the user's data, "logout" with whether it succeeded:
+resolve with the user's data or reject if no user is authenticated. "logout"
+resolves with whether it succeeded:
 <!--deDE:
     Ohne Redux liegt die Sitzung in einem Kontext. "authenticate" und "login"
-    liefern die Daten des Benutzers, "logout", ob es erfolgreich war:
+    liefern die Daten des Benutzers oder lehnen ab, wenn kein Benutzer
+    angemeldet ist. "logout" liefert, ob es erfolgreich war:
 -->
 <!--frFR:
     Sans Redux, la session réside dans un contexte. "authenticate" et "login"
-    fournissent les données de l'utilisateur, "logout" indique s'il a réussi:
+    fournissent les données de l'utilisateur ou rejettent si aucun
+    utilisateur n'est authentifié. "logout" indique s'il a réussi:
 -->
 
 ```TypeScript

@@ -120,8 +120,16 @@ export const sessionFactory = <
                             return userContext
                         },
                         (error: unknown) => {
+                            /*
+                                NOTE: A failed authentication means that there
+                                is no authenticated user, so dependent
+                                components can redirect to a login page.
+                            */
                             updateSession((session) => ({
-                                ...session, authenticating: null
+                                ...session,
+                                authenticated: false,
+                                authenticating: null,
+                                userContext: undefined
                             }))
 
                             throw error

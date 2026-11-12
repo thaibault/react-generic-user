@@ -201,7 +201,7 @@ describe('context session', () => {
         await assertion
 
         expect(result.value.session).toMatchObject(
-            {authenticated: null, authenticating: null}
+            {authenticated: false, authenticating: null}
         )
         expect(callbacks.onAuthenticate).not.toHaveBeenCalled()
     })
@@ -238,7 +238,7 @@ describe('context session', () => {
         await assertion
 
         expect(result.value.session).toMatchObject(
-            {authenticated: null, authenticating: null}
+            {authenticated: false, authenticating: null}
         )
     })
     test('logs out', async () => {
