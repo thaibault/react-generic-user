@@ -273,7 +273,7 @@ export const componentFactory = function<
                         inputProperties || {}, inputProperties
                     )}
                     {...useMemorizedValue<TextInputTypes.Props<string>>(
-                        loginProperties || {}, inputProperties
+                        loginProperties || {}, loginProperties
                     )}
                 />
 
