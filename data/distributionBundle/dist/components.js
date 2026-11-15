@@ -1,6 +1,10 @@
 if(typeof window==='undefined'||window===null)var window=(typeof globalThis==='undefined'||globalThis===null)?{}:globalThis;import { default as __WEBPACK_EXTERNAL_MODULE_react_input_material_components_TextInput_e3667393_default__ } from "react-input-material/components/TextInput";
 import { Button as __WEBPACK_EXTERNAL_MODULE__rmwc_button_e0454fea_Button__ } from "@rmwc/button";
 import * as __WEBPACK_EXTERNAL_MODULE_clientnode__ from "clientnode";
+import * as __WEBPACK_EXTERNAL_MODULE_core_js_modules_es_array_push_js_baa3ea94__ from "core-js/modules/es.array.push.js";
+import * as __WEBPACK_EXTERNAL_MODULE_core_js_modules_es_iterator_constructor_js_833f4df9__ from "core-js/modules/es.iterator.constructor.js";
+import * as __WEBPACK_EXTERNAL_MODULE_core_js_modules_es_iterator_filter_js_abae28b4__ from "core-js/modules/es.iterator.filter.js";
+import * as __WEBPACK_EXTERNAL_MODULE_core_js_modules_es_iterator_for_each_js_2628f2dd__ from "core-js/modules/es.iterator.for-each.js";
 import * as __WEBPACK_EXTERNAL_MODULE_react__ from "react";
 import * as __WEBPACK_EXTERNAL_MODULE_react_generic_tools_67824958__ from "react-generic-tools";
 import * as __WEBPACK_EXTERNAL_MODULE_react_jsx_runtime_00f484c1__ from "react/jsx-runtime";
@@ -13,14 +17,17 @@ var x = function(y) {
 	var x = {}; __webpack_require__.d(x, y); return x
 } 
 var y = function(x) { return function() { return x; }; }
-module.exports = x({ ["memo"]: function() { return __WEBPACK_EXTERNAL_MODULE_react__.memo; }, ["useEffect"]: function() { return __WEBPACK_EXTERNAL_MODULE_react__.useEffect; }, ["useState"]: function() { return __WEBPACK_EXTERNAL_MODULE_react__.useState; } });
+module.exports = x({  });
 
 /***/ }),
 /* 2 */
-/***/ (function(__unused_webpack_module, __webpack_exports__) {
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
-/* harmony default export */ __webpack_exports__.A = ({"login":"login","loginStatus":"login__status","loginButton":"login__button","loginName":"login__name","loginPassword":"login__password"});
+var x = function(y) {
+	var x = {}; __webpack_require__.d(x, y); return x
+} 
+var y = function(x) { return function() { return x; }; }
+module.exports = x({  });
 
 /***/ }),
 /* 3 */
@@ -30,11 +37,49 @@ var x = function(y) {
 	var x = {}; __webpack_require__.d(x, y); return x
 } 
 var y = function(x) { return function() { return x; }; }
+module.exports = x({  });
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var x = function(y) {
+	var x = {}; __webpack_require__.d(x, y); return x
+} 
+var y = function(x) { return function() { return x; }; }
+module.exports = x({  });
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var x = function(y) {
+	var x = {}; __webpack_require__.d(x, y); return x
+} 
+var y = function(x) { return function() { return x; }; }
+module.exports = x({ ["memo"]: function() { return __WEBPACK_EXTERNAL_MODULE_react__.memo; }, ["useEffect"]: function() { return __WEBPACK_EXTERNAL_MODULE_react__.useEffect; }, ["useState"]: function() { return __WEBPACK_EXTERNAL_MODULE_react__.useState; } });
+
+/***/ }),
+/* 6 */
+/***/ (function(__unused_webpack_module, __webpack_exports__) {
+
+// extracted by mini-css-extract-plugin
+/* harmony default export */ __webpack_exports__.A = ({"login":"login","loginStatus":"login__status","loginButton":"login__button","loginName":"login__name","loginPassword":"login__password"});
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var x = function(y) {
+	var x = {}; __webpack_require__.d(x, y); return x
+} 
+var y = function(x) { return function() { return x; }; }
 module.exports = x({ ["Fragment"]: function() { return __WEBPACK_EXTERNAL_MODULE_react_jsx_runtime_00f484c1__.Fragment; }, ["jsx"]: function() { return __WEBPACK_EXTERNAL_MODULE_react_jsx_runtime_00f484c1__.jsx; }, ["jsxs"]: function() { return __WEBPACK_EXTERNAL_MODULE_react_jsx_runtime_00f484c1__.jsxs; } });
 
 /***/ }),
-/* 4 */,
-/* 5 */
+/* 8 */,
+/* 9 */,
+/* 10 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -45,20 +90,28 @@ __webpack_require__.d(__webpack_exports__, {
   Ay: function() { return /* binding */ components; }
 });
 
+// EXTERNAL MODULE: external "core-js/modules/es.array.push.js"
+var es_array_push_js_ = __webpack_require__(1);
+// EXTERNAL MODULE: external "core-js/modules/es.iterator.constructor.js"
+var es_iterator_constructor_js_ = __webpack_require__(2);
+// EXTERNAL MODULE: external "core-js/modules/es.iterator.filter.js"
+var es_iterator_filter_js_ = __webpack_require__(3);
+// EXTERNAL MODULE: external "core-js/modules/es.iterator.for-each.js"
+var es_iterator_for_each_js_ = __webpack_require__(4);
 // EXTERNAL MODULE: external "clientnode"
-var external_clientnode_ = __webpack_require__(8);
+var external_clientnode_ = __webpack_require__(13);
 // EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(1);
+var external_react_ = __webpack_require__(5);
 ;// external "react-input-material/components/TextInput"
 
 // EXTERNAL MODULE: external "react-generic-tools"
-var external_react_generic_tools_ = __webpack_require__(9);
+var external_react_generic_tools_ = __webpack_require__(14);
 ;// external "@rmwc/button"
 
 // EXTERNAL MODULE: ./src/style.module.css
-var style_module = __webpack_require__(2);
+var style_module = __webpack_require__(6);
 // EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(3);
+var jsx_runtime_ = __webpack_require__(7);
 ;// ./src/components.tsx
 // #!/usr/bin/env babel-node
 // -*- coding: utf-8 -*-
@@ -88,12 +141,12 @@ var CSS_CLASS_NAMES=style_module/* default */.A;/**
          * @returns An content to be rendered.
          * A wrapper for <Route> that redirects to the login screen if you're
          * not yet authenticated.
-         */Authenticated:/*#__PURE__*/(0,external_react_.memo)(function(_ref2){var _fallbackLocation;var children=_ref2.children,fallbackLocation=_ref2.fallbackLocation,_ref2$loadingFallback=_ref2.loadingFallback,loadingFallback=_ref2$loadingFallback===void 0?"loading...":_ref2$loadingFallback;var location=useLocation();var user=useUser();(0,external_react_.useEffect)(function(){if(user.session.authenticated===null)user.authenticate()},[user.session.authenticated]);fallbackLocation=(0,external_react_generic_tools_.useMemorizedValue)(typeof fallbackLocation==="string"?{pathname:fallbackLocation}:fallbackLocation,fallbackLocation);var loginTarget=(0,external_react_generic_tools_.useMemorizedValue)(_objectSpread({},fallbackLocation),fallbackLocation);if(user.session.authenticated){if((0,external_clientnode_.isFunction)(children))return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{children:children({fallbackLocation:fallbackLocation,location:location,user:user})});return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{children:children})}if(user.session.authenticated===null)return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{children:loadingFallback!==null&&loadingFallback!==void 0?loadingFallback:""});if(((_fallbackLocation=fallbackLocation)===null||_fallbackLocation===void 0?void 0:_fallbackLocation.pathname)===location.pathname)return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{});return/*#__PURE__*/(0,jsx_runtime_.jsx)(Redirect,{replace:true,state:{from:location},to:loginTarget})}),Login:function Login(_ref3){var buttonProperties=_ref3.buttonProperties,inputProperties=_ref3.inputProperties,loginProperties=_ref3.loginProperties,passwordProperties=_ref3.passwordProperties,children=_ref3.children,onSubmitted=_ref3.onSubmitted,onSuccess=_ref3.onSuccess;var user=useUser();var _useState=(0,external_react_.useState)(_objectSpread(_objectSpread({},loginProperties),{},{invalid:true})),_useState2=_slicedToArray(_useState,2),loginInput=_useState2[0],setLoginInput=_useState2[1];var _useState3=(0,external_react_.useState)(_objectSpread(_objectSpread({},passwordProperties),{},{invalid:true})),_useState4=_slicedToArray(_useState3,2),passwordInput=_useState4[0],setPasswordInput=_useState4[1];var _useState5=(0,external_react_.useState)(false),_useState6=_slicedToArray(_useState5,2),submitted=_useState6[0],setSubmitted=_useState6[1];var _useState7=(0,external_react_.useState)(false),_useState8=_slicedToArray(_useState7,2),sent=_useState8[0],setSent=_useState8[1];(0,external_react_.useEffect)(function(){if(user.session.authenticated&&onSuccess)onSuccess(user)},[user.session.authenticated,onSuccess]);var login=(0,external_react_generic_tools_.useMemorizedValue)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(event){var _loginInput$value,_passwordInput$value;var result,_loginInput$value2,_passwordInput$value2,_result;return _regenerator().w(function(_context){while(1)switch(_context.n){case 0:event.preventDefault();result=onSubmitted&&onSubmitted((_loginInput$value=loginInput.value)!==null&&_loginInput$value!==void 0?_loginInput$value:null,(_passwordInput$value=passwordInput.value)!==null&&_passwordInput$value!==void 0?_passwordInput$value:null);if(!(typeof result!=="boolean"||result)){_context.n=1;break}setSubmitted(true);if(!(loginInput.valid&&passwordInput.valid)){_context.n=1;break}_result=user.login({login:(_loginInput$value2=loginInput.value)!==null&&_loginInput$value2!==void 0?_loginInput$value2:null,password:(_passwordInput$value2=passwordInput.value)!==null&&_passwordInput$value2!==void 0?_passwordInput$value2:null});setSent(true);if(!(onSuccess&&_result!==null&&_result!==void 0&&_result.then)){_context.n=1;break}_context.n=1;return _result.then(function(){onSuccess(user)});case 1:return _context.a(2)}},_callee)})),onSubmitted,onSuccess,loginInput.value,loginInput.valid,passwordInput.value,passwordInput.valid,setSent,setSubmitted);var renderStatus=(0,external_react_generic_tools_.useMemorizedValue)((0,external_clientnode_.isFunction)(children)?children:children?function(){return children}:function(_ref5){var sent=_ref5.sent,submitted=_ref5.submitted,pending=_ref5.pending,authenticated=_ref5.authenticated,loginInput=_ref5.loginInput,passwordInput=_ref5.passwordInput;return pending?/*#__PURE__*/(0,jsx_runtime_.jsx)("div",{className:CSS_CLASS_NAMES.loginStatus,children:"authenticating..."}):submitted&&!authenticated&&(sent||loginInput.invalid||passwordInput.invalid)?/*#__PURE__*/(0,jsx_runtime_.jsx)("div",{className:CSS_CLASS_NAMES.loginStatus,role:"alert",children:loginInput.invalid?"Please type valid login.":passwordInput.invalid?"Please type valid password.":"Invalid credentials!"}):""},children);var setSentToFalse=(0,external_react_generic_tools_.useMemorizedValue)(function(){setSent(false)},setSent);return/*#__PURE__*/(0,jsx_runtime_.jsxs)("form",{className:CSS_CLASS_NAMES.login,children:[renderStatus({sent:sent,submitted:submitted,pending:Boolean(user.session.authenticating),authenticated:Boolean(user.session.authenticated),loginInput:loginInput,passwordInput:passwordInput}),/*#__PURE__*/(0,jsx_runtime_.jsx)(__WEBPACK_EXTERNAL_MODULE_react_input_material_components_TextInput_e3667393_default__,_objectSpread(_objectSpread({className:CSS_CLASS_NAMES.loginName,componentProperties:(0,external_react_generic_tools_.useMemorizedValue)({autoComplete:"username"}),name:"login",onChange:setLoginInput,onChangeValue:setSentToFalse,required:true,trailingIcon:"account_circle"},(0,external_react_generic_tools_.useMemorizedValue)(inputProperties||{},inputProperties)),(0,external_react_generic_tools_.useMemorizedValue)(loginProperties||{},inputProperties))),/*#__PURE__*/(0,jsx_runtime_.jsx)(__WEBPACK_EXTERNAL_MODULE_react_input_material_components_TextInput_e3667393_default__,_objectSpread(_objectSpread({className:CSS_CLASS_NAMES.loginPassword,componentProperties:(0,external_react_generic_tools_.useMemorizedValue)({autoComplete:"current-password"}),name:"password",onChange:setPasswordInput,onChangeValue:setSentToFalse,required:true,trailingIcon:"password_preset"},(0,external_react_generic_tools_.useMemorizedValue)(inputProperties||{},inputProperties)),(0,external_react_generic_tools_.useMemorizedValue)(passwordProperties||{},passwordProperties))),/*#__PURE__*/(0,jsx_runtime_.jsx)(__WEBPACK_EXTERNAL_MODULE__rmwc_button_e0454fea_Button__,_objectSpread({children:"Log in",className:CSS_CLASS_NAMES.loginButton,onClick:(0,external_react_generic_tools_.useMemorizedValue)(function(event){void login(event)},login),trailingIcon:"input"},(0,external_react_generic_tools_.useMemorizedValue)(buttonProperties||{},buttonProperties)))]})}}};/* harmony default export */ var components = (componentFactory);
+         */Authenticated:/*#__PURE__*/(0,external_react_.memo)(function(_ref2){var _fallbackLocation;var children=_ref2.children,fallbackLocation=_ref2.fallbackLocation,_ref2$loadingFallback=_ref2.loadingFallback,loadingFallback=_ref2$loadingFallback===void 0?"loading...":_ref2$loadingFallback;var location=useLocation();var user=useUser();(0,external_react_.useEffect)(function(){if(user.session.authenticated===null)user.authenticate()},[user.session.authenticated]);fallbackLocation=(0,external_react_generic_tools_.useMemorizedValue)(typeof fallbackLocation==="string"?{pathname:fallbackLocation}:fallbackLocation,fallbackLocation);var loginTarget=(0,external_react_generic_tools_.useMemorizedValue)(_objectSpread({},fallbackLocation),fallbackLocation);if(user.session.authenticated){if((0,external_clientnode_.isFunction)(children))return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{children:children({fallbackLocation:fallbackLocation,location:location,user:user})});return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{children:children})}if(user.session.authenticated===null)return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{children:loadingFallback!==null&&loadingFallback!==void 0?loadingFallback:""});if(((_fallbackLocation=fallbackLocation)===null||_fallbackLocation===void 0?void 0:_fallbackLocation.pathname)===location.pathname)return/*#__PURE__*/(0,jsx_runtime_.jsx)(jsx_runtime_.Fragment,{});return/*#__PURE__*/(0,jsx_runtime_.jsx)(Redirect,{replace:true,state:{from:location},to:loginTarget})}),Login:function Login(_ref3){var buttonProperties=_ref3.buttonProperties,inputProperties=_ref3.inputProperties,loginProperties=_ref3.loginProperties,passwordProperties=_ref3.passwordProperties,children=_ref3.children,onSubmitted=_ref3.onSubmitted,onSuccess=_ref3.onSuccess;var user=useUser();var _useState=(0,external_react_.useState)(_objectSpread(_objectSpread({},loginProperties),{},{invalid:true})),_useState2=_slicedToArray(_useState,2),loginInput=_useState2[0],setLoginInput=_useState2[1];var _useState3=(0,external_react_.useState)(_objectSpread(_objectSpread({},passwordProperties),{},{invalid:true})),_useState4=_slicedToArray(_useState3,2),passwordInput=_useState4[0],setPasswordInput=_useState4[1];var _useState5=(0,external_react_.useState)(false),_useState6=_slicedToArray(_useState5,2),submitted=_useState6[0],setSubmitted=_useState6[1];var _useState7=(0,external_react_.useState)(false),_useState8=_slicedToArray(_useState7,2),sent=_useState8[0],setSent=_useState8[1];(0,external_react_.useEffect)(function(){if(user.session.authenticated&&onSuccess)onSuccess(user)},[user.session.authenticated,onSuccess]);var login=(0,external_react_generic_tools_.useMemorizedValue)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(event){var _loginInput$value,_passwordInput$value;var result,_loginInput$value2,_passwordInput$value2,_result;return _regenerator().w(function(_context){while(1)switch(_context.n){case 0:event.preventDefault();result=onSubmitted&&onSubmitted((_loginInput$value=loginInput.value)!==null&&_loginInput$value!==void 0?_loginInput$value:null,(_passwordInput$value=passwordInput.value)!==null&&_passwordInput$value!==void 0?_passwordInput$value:null);if(!(typeof result!=="boolean"||result)){_context.n=1;break}setSubmitted(true);if(!(loginInput.valid&&passwordInput.valid)){_context.n=1;break}_result=user.login({login:(_loginInput$value2=loginInput.value)!==null&&_loginInput$value2!==void 0?_loginInput$value2:null,password:(_passwordInput$value2=passwordInput.value)!==null&&_passwordInput$value2!==void 0?_passwordInput$value2:null});setSent(true);if(!(onSuccess&&_result!==null&&_result!==void 0&&_result.then)){_context.n=1;break}_context.n=1;return _result.then(function(){onSuccess(user)});case 1:return _context.a(2)}},_callee)})),onSubmitted,onSuccess,loginInput.value,loginInput.valid,passwordInput.value,passwordInput.valid,setSent,setSubmitted);var renderStatus=(0,external_react_generic_tools_.useMemorizedValue)((0,external_clientnode_.isFunction)(children)?children:children?function(){return children}:function(_ref5){var sent=_ref5.sent,submitted=_ref5.submitted,pending=_ref5.pending,authenticated=_ref5.authenticated,loginInput=_ref5.loginInput,passwordInput=_ref5.passwordInput;return pending?/*#__PURE__*/(0,jsx_runtime_.jsx)("div",{className:CSS_CLASS_NAMES.loginStatus,children:"authenticating..."}):submitted&&!authenticated&&(sent||loginInput.invalid||passwordInput.invalid)?/*#__PURE__*/(0,jsx_runtime_.jsx)("div",{className:CSS_CLASS_NAMES.loginStatus,role:"alert",children:loginInput.invalid?"Please type valid login.":passwordInput.invalid?"Please type valid password.":"Invalid credentials!"}):""},children);var setSentToFalse=(0,external_react_generic_tools_.useMemorizedValue)(function(){setSent(false)},setSent);return/*#__PURE__*/(0,jsx_runtime_.jsxs)("form",{className:CSS_CLASS_NAMES.login,children:[renderStatus({sent:sent,submitted:submitted,pending:Boolean(user.session.authenticating),authenticated:Boolean(user.session.authenticated),loginInput:loginInput,passwordInput:passwordInput}),/*#__PURE__*/(0,jsx_runtime_.jsx)(__WEBPACK_EXTERNAL_MODULE_react_input_material_components_TextInput_e3667393_default__,_objectSpread(_objectSpread({className:CSS_CLASS_NAMES.loginName,componentProperties:(0,external_react_generic_tools_.useMemorizedValue)({autoComplete:"username"}),name:"login",onChange:setLoginInput,onChangeValue:setSentToFalse,required:true,trailingIcon:"account_circle"},(0,external_react_generic_tools_.useMemorizedValue)(inputProperties||{},inputProperties)),(0,external_react_generic_tools_.useMemorizedValue)(loginProperties||{},loginProperties))),/*#__PURE__*/(0,jsx_runtime_.jsx)(__WEBPACK_EXTERNAL_MODULE_react_input_material_components_TextInput_e3667393_default__,_objectSpread(_objectSpread({className:CSS_CLASS_NAMES.loginPassword,componentProperties:(0,external_react_generic_tools_.useMemorizedValue)({autoComplete:"current-password"}),name:"password",onChange:setPasswordInput,onChangeValue:setSentToFalse,required:true,trailingIcon:"password_preset"},(0,external_react_generic_tools_.useMemorizedValue)(inputProperties||{},inputProperties)),(0,external_react_generic_tools_.useMemorizedValue)(passwordProperties||{},passwordProperties))),/*#__PURE__*/(0,jsx_runtime_.jsx)(__WEBPACK_EXTERNAL_MODULE__rmwc_button_e0454fea_Button__,_objectSpread({children:"Log in",className:CSS_CLASS_NAMES.loginButton,onClick:(0,external_react_generic_tools_.useMemorizedValue)(function(event){void login(event)},login),trailingIcon:"input"},(0,external_react_generic_tools_.useMemorizedValue)(buttonProperties||{},buttonProperties)))]})}}};/* harmony default export */ var components = (componentFactory);
 
 /***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */
+/* 11 */,
+/* 12 */,
+/* 13 */
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var x = function(y) {
@@ -103,7 +156,7 @@ var y = function(x) { return function() { return x; }; }
 module.exports = x({ ["isFunction"]: function() { return __WEBPACK_EXTERNAL_MODULE_clientnode__.isFunction; } });
 
 /***/ }),
-/* 9 */
+/* 14 */
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var x = function(y) {
@@ -158,8 +211,8 @@ module.exports = x({ ["useMemorizedValue"]: function() { return __WEBPACK_EXTERN
 /******/ // startup
 /******/ // Load entry module and return exports
 /******/ // This entry module is referenced by other modules so it can't be inlined
-/******/ __webpack_require__(2);
-/******/ var __webpack_exports__ = __webpack_require__(5);
+/******/ __webpack_require__(6);
+/******/ var __webpack_exports__ = __webpack_require__(10);
 /******/ var __webpack_exports__CSS_CLASS_NAMES = __webpack_exports__.sr;
 /******/ var __webpack_exports__componentFactory = __webpack_exports__.WV;
 /******/ var __webpack_exports__default = __webpack_exports__.Ay;
