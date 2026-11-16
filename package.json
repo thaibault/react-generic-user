@@ -95,7 +95,7 @@
     "@rmwc/theme": "^14.3.5",
     "@rmwc/touch-target": "^14.3.5",
     "@rmwc/typography": "^14.3.5",
-    "@stylistic/eslint-plugin": "^5.10.0",
+    "@stylistic/eslint-plugin": "^6.0.1",
     "@teamsupercell/typings-for-css-modules-loader": "^2.5.2",
     "@types/jsdom": "^30.0.0",
     "@types/node": "^26.6.6",
