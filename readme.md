@@ -247,7 +247,7 @@ redirect component and location hook:
 ```TypeScript
 import {Navigate, Route, Routes, useLocation, useNavigate} from 'react-router'
 import componentFactory from 'react-generic-user/components'
-import 'react-generic-user/components.css'
+import 'react-generic-user/index.css'
 
 const {Authenticated, Login} =
     componentFactory(useUser, {Redirect: Navigate, useLocation})
