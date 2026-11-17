@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3>react-generic-user 0.0.5</h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><!-- !/usr/bin/env markdown
+-*- coding: utf-8 -*-
+region header
+Copyright Torben Sickert (info["~at~"]tsickert.com) 16.12.2012
+
+License
+-------
+
+This library written by Torben Sickert stands under a creative commons naming
+4.0 international license.
+See https://creativecommons.org/licenses/by/4.0/deed.de
+endregion -->
+<!--|deDE:Projektstatus-->
+<!--|frFR:Statut du projet-->
+<h2>Project status</h2>
+<p><a href="https://www.npmjs.com/package/react-generic-user"><img src="https://img.shields.io/npm/v/react-generic-user?color=%23d55e5d&amp;label=npm%20package%20version&amp;logoColor=%23d55e5d&amp;style=for-the-badge" alt="npm"></a>
+<a href="https://www.npmjs.com/package/react-generic-user"><img src="https://img.shields.io/npm/dy/react-generic-user.svg?style=for-the-badge" alt="npm downloads"></a></p>
+<p><a href="https://github.com/thaibault/react-generic-user/actions/workflows/build.yaml"><img src="https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/build.yaml?style=for-the-badge" alt="build"></a>
+<a href="https://github.com/thaibault/react-generic-user/actions/workflows/build-package-and-push.yaml"><img src="https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/build-package-and-push.yaml?label=build%20push%20package&amp;style=for-the-badge" alt="build push package"></a></p>
+<p><a href="https://github.com/thaibault/react-generic-user/actions/workflows/check-types.yaml"><img src="https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/check-types.yaml?label=check%20types&amp;style=for-the-badge" alt="check types"></a>
+<a href="https://github.com/thaibault/react-generic-user/actions/workflows/lint.yaml"><img src="https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/lint.yaml?label=lint&amp;style=for-the-badge" alt="lint"></a>
+<a href="https://github.com/thaibault/react-generic-user/actions/workflows/test-coverage-report.yaml"><img src="https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/test-coverage-report.yaml?label=test&amp;style=for-the-badge" alt="test"></a></p>
+<p><a href="https://coveralls.io/github/thaibault/react-generic-user"><img src="https://img.shields.io/coverallsCoverage/github/thaibault/react-generic-user?label=code%20coverage&amp;style=for-the-badge" alt="code coverage"></a></p>
+<p><a href="https://github.com/thaibault/react-generic-user/actions/workflows/deploy-web-documentation.yaml"><img src="https://img.shields.io/github/actions/workflow/status/thaibault/react-generic-user/deploy-web-documentation.yaml?label=deploy%20web%20documentation&amp;style=for-the-badge" alt="deploy web documentation"></a>
+<a href="https://tsickert.com/react-generic-user"><img src="https://img.shields.io/website-up-down-green-red/https/tsickert.com/react-generic-user.svg?label=web-documentation&amp;style=for-the-badge" alt="web documentation"></a></p>
+<!--|deDE:Einsatzmöglichkeiten-->
+<!--|frFR:Cas d'utilisation-->
+<h2>Use case</h2>
+<p>Everything a React application needs around a logged-in user, without tying
+you to a backend or a router: You implement how to check a session, log in
+and log out, the library keeps the session state, offers hooks to read it and
+provides components to protect content and to log in. The state lives either
+in <a href="https://redux-toolkit.js.org">Redux</a> or in a React context, routing works
+with any library offering a redirect component and a location hook, e.g.
+<a href="https://reactrouter.com">React Router</a>.</p>
+<!--deDE:
+    Alles, was eine React-Anwendung rund um einen angemeldeten Benutzer
+    braucht, ohne Sie an ein Backend oder einen Router zu binden: Sie
+    implementieren, wie eine Sitzung geprüft, an- und abgemeldet wird, die
+    Bibliothek verwaltet den Sitzungszustand, bietet Hooks zum Auslesen und
+    stellt Komponenten zum Schutz von Inhalten und zur Anmeldung bereit. Der
+    Zustand liegt entweder in [Redux](https://redux-toolkit.js.org) oder in
+    einem React-Kontext, das Routing funktioniert mit jeder Bibliothek, die
+    eine Weiterleitungskomponente und einen Location-Hook bietet, z. B.
+    [React Router](https://reactrouter.com).
+-->
+<!--frFR:
+    Tout ce dont une application React a besoin autour d'un utilisateur
+    connecté, sans vous lier à un backend ou à un routeur: vous implémentez la
+    vérification de session, la connexion et la déconnexion, la bibliothèque
+    gère l'état de la session, propose des hooks pour le lire et fournit des
+    composants pour protéger du contenu et se connecter. L'état réside soit
+    dans [Redux](https://redux-toolkit.js.org), soit dans un contexte React,
+    le routage fonctionne avec toute bibliothèque proposant un composant de
+    redirection et un hook de localisation, par exemple
+    [React Router](https://reactrouter.com).
+-->
+<p>Features included:</p>
+<!--deDE:Enthaltene Funktionen:-->
+<!--frFR:Fonctionnalités incluses:-->
+<ul>
+<li>Session state with &quot;authenticated&quot;, &quot;authenticating&quot;, &quot;deauthenticating&quot;
+and the user's data.<!--deDE:Sitzungszustand mit "authenticated", "authenticating", "deauthenticating" und den Daten des Benutzers.--><!--frFR:État de session avec "authenticated", "authenticating", "deauthenticating" et les données de l'utilisateur.--></li>
+<li>Hooks &quot;useUser&quot;, &quot;useHasRole&quot; and &quot;useIsAdmin&quot;.<!--deDE:Hooks "useUser", "useHasRole" und "useIsAdmin".--><!--frFR:Hooks "useUser", "useHasRole" et "useIsAdmin".--></li>
+<li>&quot;Authenticated&quot; component which checks the session and redirects to the
+login page if needed.<!--deDE:Komponente "Authenticated", die die Sitzung prüft und bei Bedarf zur Anmeldeseite weiterleitet.--><!--frFR:Composant "Authenticated" qui vérifie la session et redirige vers la page de connexion si nécessaire.--></li>
+<li>Ready to use &quot;Login&quot; form based on
+<a href="https://tsickert.com/react-input-material">react-input-material</a>.<!--deDE:Einsatzbereites Anmeldeformular "Login" auf Basis von [react-input-material](https://tsickert.com/react-input-material).--><!--frFR:Formulaire de connexion "Login" prêt à l'emploi basé sur [react-input-material](https://tsickert.com/react-input-material).--></li>
+<li>Remembers the initially requested page to return to after login (Redux
+session).<!--deDE:Merkt sich die ursprünglich angeforderte Seite, um nach der Anmeldung dorthin zurückzukehren (Redux-Sitzung).--><!--frFR:Mémorise la page initialement demandée pour y revenir après la connexion (session Redux).--></li>
+<li>Playwright harness for end-to-end tests of the login form.<!--deDE:Playwright-Harness für End-to-End-Tests des Anmeldeformulars.--><!--frFR:Harnais Playwright pour les tests de bout en bout du formulaire de connexion.--></li>
+</ul>
+<div class="wd-table-of-contents">
+    <h2 id="content">Content<!--deDE:Inhalt--><!--frFR:Contenu--></h2>
+    <!--wd-table-of-contents-->
+</div>
+<h2>Installation</h2>
+<pre class="prettyprint source lang-bash"><code>npm install react-generic-user clientnode core-js react react-generic-tools
+</code></pre>
+<p>Depending on the parts you use, add &quot;@reduxjs/toolkit&quot; and &quot;react-redux&quot; for
+the Redux session as well as &quot;react-input-material&quot;, &quot;@rmwc/button&quot; and
+&quot;react-dom&quot; for the components.</p>
+<!--deDE:
+    Je nach verwendeten Teilen ergänzen Sie "@reduxjs/toolkit" und
+    "react-redux" für die Redux-Sitzung sowie "react-input-material",
+    "@rmwc/button" und "react-dom" für die Komponenten.
+-->
+<!--frFR:
+    Selon les parties utilisées, ajoutez "@reduxjs/toolkit" et "react-redux"
+    pour la session Redux ainsi que "react-input-material", "@rmwc/button" et
+    "react-dom" pour les composants.
+-->
+<!--|deDE:Sitzung mit Redux-->
+<!--|frFR:Session avec Redux-->
+<h2>Session with Redux</h2>
+<p>Provide three functions talking to your backend. &quot;authenticate&quot; checks an
+existing session, e.g. via a cookie, and &quot;login&quot; checks credentials. Both
+return the user's data, which needs at least a &quot;name&quot; and optionally
+&quot;roles&quot;, or &quot;null&quot; if not authenticated. &quot;logout&quot; returns whether it
+succeeded:</p>
+<!--deDE:
+    Stellen Sie drei Funktionen bereit, die mit Ihrem Backend sprechen.
+    "authenticate" prüft eine bestehende Sitzung, z. B. über ein Cookie, und
+    "login" prüft Zugangsdaten. Beide geben die Daten des Benutzers zurück,
+    die mindestens einen "name" und optional "roles" enthalten, oder "null",
+    wenn keine Anmeldung besteht. "logout" gibt zurück, ob es erfolgreich
+    war:
+-->
+<!--frFR:
+    Fournissez trois fonctions qui communiquent avec votre backend.
+    "authenticate" vérifie une session existante, par exemple via un cookie,
+    et "login" vérifie les identifiants. Les deux retournent les données de
+    l'utilisateur, qui contiennent au moins un "name" et éventuellement des
+    "roles", ou "null" en l'absence d'authentification. "logout" indique s'il
+    a réussi:
+-->
+<pre class="prettyprint source lang-TypeScript"><code>import {configureStore} from '@reduxjs/toolkit'
+import {useLocation} from 'react-router'
+import sessionFactory from 'react-generic-user/redux'
+
+export const {slice, useHasRole, useIsAdmin, useUser} = sessionFactory(
+    {
+        authenticate: async () => (await api.getSession())?.user ?? null,
+        login: async ({login, password}) =>
+            (await api.login(login, password))?.user ?? null,
+        logout: async () => (await api.logout()).ok
+    },
+    // Optional: Remembers the initially requested location.
+    {useLocation}
+)
+
+export const store = configureStore({reducer: {user: slice.reducer}})
+</code></pre>
+<p>The slice has to be registered under the key &quot;user&quot;. Wrap your application in
+the &quot;Provider&quot; of &quot;react-redux&quot; as usual. &quot;useUser()&quot; then returns
+&quot;session&quot;, &quot;authenticate&quot;, &quot;login&quot; and &quot;logout&quot;.</p>
+<!--deDE:
+    Der Slice muss unter dem Schlüssel "user" registriert werden. Umschließen
+    Sie Ihre Anwendung wie gewohnt mit dem "Provider" von "react-redux".
+    "useUser()" liefert dann "session", "authenticate", "login" und
+    "logout".
+-->
+<!--frFR:
+    La slice doit être enregistrée sous la clé "user". Enveloppez votre
+    application dans le "Provider" de "react-redux" comme d'habitude.
+    "useUser()" retourne alors "session", "authenticate", "login" et
+    "logout".
+-->
+<!--|deDE:Sitzung mit React-Kontext-->
+<!--|frFR:Session avec un contexte React-->
+<h2>Session with a React context</h2>
+<p>Without Redux the session lives in a context. &quot;authenticate&quot; and &quot;login&quot;
+resolve with the user's data or reject if no user is authenticated. &quot;logout&quot;
+resolves with whether it succeeded:</p>
+<!--deDE:
+    Ohne Redux liegt die Sitzung in einem Kontext. "authenticate" und "login"
+    liefern die Daten des Benutzers oder lehnen ab, wenn kein Benutzer
+    angemeldet ist. "logout" liefert, ob es erfolgreich war:
+-->
+<!--frFR:
+    Sans Redux, la session réside dans un contexte. "authenticate" et "login"
+    fournissent les données de l'utilisateur ou rejettent si aucun
+    utilisateur n'est authentifié. "logout" indique s'il a réussi:
+-->
+<pre class="prettyprint source lang-TypeScript"><code>import sessionFactory from 'react-generic-user/context'
+
+export const {UserProvider, useHasRole, useIsAdmin, useUser} =
+    sessionFactory({authenticate, login, logout})
+
+export const Root = () => &lt;UserProvider>
+    &lt;Application />
+&lt;/UserProvider>
+</code></pre>
+<p>&quot;UserProvider&quot; accepts &quot;options&quot; with &quot;onAuthenticate&quot; and
+&quot;onDeauthenticate&quot; callbacks.</p>
+<!--deDE:
+    "UserProvider" akzeptiert "options" mit den Callbacks "onAuthenticate"
+    und "onDeauthenticate".
+-->
+<!--frFR:
+    "UserProvider" accepte des "options" avec les callbacks "onAuthenticate"
+    et "onDeauthenticate".
+-->
+<!--|deDE:Rollen-->
+<!--|frFR:Rôles-->
+<h3>Roles</h3>
+<p>&quot;useHasRole('editor')&quot; or &quot;useHasRole(['editor', 'reviewer'])&quot; is &quot;true&quot; if
+the user has all given roles. &quot;useIsAdmin()&quot; checks for the role &quot;_admin&quot;.</p>
+<!--deDE:
+    "useHasRole('editor')" oder "useHasRole(['editor', 'reviewer'])" ist
+    "true", wenn der Benutzer alle angegebenen Rollen hat. "useIsAdmin()"
+    prüft auf die Rolle "_admin".
+-->
+<!--frFR:
+    "useHasRole('editor')" ou "useHasRole(['editor', 'reviewer'])" vaut
+    "true" si l'utilisateur possède tous les rôles indiqués. "useIsAdmin()"
+    vérifie le rôle "_admin".
+-->
+<!--|deDE:Komponenten-->
+<!--|frFR:Composants-->
+<h2>Components</h2>
+<p>Create the components once with your &quot;useUser&quot; hook and your router's
+redirect component and location hook:</p>
+<!--deDE:
+    Erzeugen Sie die Komponenten einmalig mit Ihrem "useUser"-Hook sowie der
+    Weiterleitungskomponente und dem Location-Hook Ihres Routers:
+-->
+<!--frFR:
+    Créez les composants une seule fois avec votre hook "useUser" ainsi que
+    le composant de redirection et le hook de localisation de votre routeur:
+-->
+<pre class="prettyprint source lang-TypeScript"><code>import {Navigate, Route, Routes, useLocation, useNavigate} from 'react-router'
+import componentFactory from 'react-generic-user/components'
+import 'react-generic-user/components.css'
+
+const {Authenticated, Login} =
+    componentFactory(useUser, {Redirect: Navigate, useLocation})
+
+export const Application = () => {
+    const navigate = useNavigate()
+    const {session} = useUser()
+
+    return &lt;Routes>
+        &lt;Route
+            path=&quot;/login&quot;
+            element={&lt;Login onSuccess={() => {
+                navigate(session.initialRequestedLocation ?? '/')
+            }} />}
+        />
+        &lt;Route
+            path=&quot;*&quot;
+            element={
+                &lt;Authenticated fallbackLocation=&quot;/login&quot;>
+                    &lt;Dashboard />
+                &lt;/Authenticated>
+            }
+        />
+    &lt;/Routes>
+}
+</code></pre>
+<ul>
+<li>&quot;Authenticated&quot; checks the session on first use, shows &quot;loadingFallback&quot;
+meanwhile and redirects to &quot;fallbackLocation&quot; if not authenticated.
+&quot;children&quot; may be a function receiving &quot;user&quot; and &quot;location&quot;.<!--deDE:"Authenticated" prüft die Sitzung bei der ersten Verwendung, zeigt währenddessen "loadingFallback" an und leitet ohne Anmeldung zu "fallbackLocation" weiter. "children" kann eine Funktion sein, die "user" und "location" erhält.--><!--frFR:"Authenticated" vérifie la session à la première utilisation, affiche "loadingFallback" pendant ce temps et redirige vers "fallbackLocation" en l'absence d'authentification. "children" peut être une fonction qui reçoit "user" et "location".--></li>
+<li>&quot;Login&quot; renders name and password fields with validation and status
+messages. Customize it via &quot;loginProperties&quot;, &quot;passwordProperties&quot;,
+&quot;buttonProperties&quot;, a status render function as &quot;children&quot; and the
+callbacks &quot;onSubmitted&quot; and &quot;onSuccess&quot;.<!--deDE:"Login" stellt Namens- und Passwortfelder mit Validierung und Statusmeldungen dar. Anpassen lässt es sich über "loginProperties", "passwordProperties", "buttonProperties", eine Statusfunktion als "children" sowie die Callbacks "onSubmitted" und "onSuccess".--><!--frFR:"Login" affiche des champs de nom et de mot de passe avec validation et messages d'état. Personnalisez-le via "loginProperties", "passwordProperties", "buttonProperties", une fonction de rendu d'état comme "children" ainsi que les callbacks "onSubmitted" et "onSuccess".--></li>
+</ul>
+<!--|deDE:End-to-End-Tests-->
+<!--|frFR:Tests de bout en bout-->
+<h2>End-to-end tests</h2>
+<p>The harness locates the login form's elements for
+<a href="https://playwright.dev">Playwright</a>:</p>
+<!--deDE:
+    Das Harness findet die Elemente des Anmeldeformulars für
+    [Playwright](https://playwright.dev):
+-->
+<!--frFR:
+    Le harnais localise les éléments du formulaire de connexion pour
+    [Playwright](https://playwright.dev):
+-->
+<pre class="prettyprint source lang-TypeScript"><code>import loginHarness from 'react-generic-user/harness'
+
+const {stable: {loginButton, nameInput, passwordInput}} = loginHarness(page)
+
+await nameInput.fill('name')
+await passwordInput.fill('password')
+await loginButton.main.click()
+</code></pre>
+<!--|deDE:Entwicklung-->
+<!--|frFR:Développement-->
+<h2>Development</h2>
+<pre class="prettyprint source lang-bash"><code>yarn install
+yarn build
+yarn test
+</code></pre></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Nov 17 2026 11:39:50 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
