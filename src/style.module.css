@@ -10,7 +10,7 @@ This library written by Torben Sickert stands under a creative commons naming
 4.0 international license.
 See https://creativecommons.org/licenses/by/4.0/deed.de
 endregion */
-.login .login__name, .login__password, .login__button {
+.login .login__status, .login__name, .login__password, .login__button {
     /*
         This class is needed to be imported in the component. It should
         defined something to prevent that a minification removes it.
