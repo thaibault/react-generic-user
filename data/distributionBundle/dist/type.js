@@ -1,1 +1,0 @@
-if(null==l)var l="undefined"==typeof globalThis||null===globalThis?{}:globalThis;var a="user";export{a as ACTION_NAME_PREFIX};
